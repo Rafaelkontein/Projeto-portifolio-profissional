@@ -1,0 +1,614 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2:wght@400;500;600&family=Mulish:ital,wght@0,200;0,300;1,200&display=swap');
+@import url(https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css);
+
+
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+.hamburguer {
+    width: 2rem;
+    height: 2rem;
+    position: fixed;
+    z-index: 100;
+    right: 2rem;
+    top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    cursor: pointer;
+}
+
+.show-menu .hamburguer{
+    right: 16rem;
+
+}
+
+.line {
+    width: 100%;
+    height: .1rem;
+    background-color: #fff;
+    box-shadow: .1rem .1rem 1px;
+    transition: transform 1s;
+    
+}
+.show-menu #line1{
+    transform: rotate(45deg) translate(.3rem, .4rem); 
+}
+.show-menu #line2{
+    opacity: 0;
+}
+.show-menu #line3{
+    transform: rotate(-45deg) translate(.3rem, -.4rem); 
+}
+
+.hamburguer span{
+
+    position: absolute;
+    left: 3rem;
+    background-color: #3d0000;
+    height: 2rem;
+    width: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: font-action;
+    color: white;
+    font-size: 1.2rem;
+    opacity: 0;
+
+}
+
+.hamburguer span::before{
+
+    content: "";
+    position: absolute;
+    border-right: .5rem solid rgb(177, 175, 175);
+    border-top:.5rem  solid transparent;
+    border-left:.5rem solid transparent ;
+    border-bottom:  .5rem solid transparent;
+    left: 0.2rem;
+}
+.show-menu .hamburguer:hover span{
+
+    opacity: 1;
+    transition: 1.3s;
+}
+
+header{
+
+width: 100%;
+height: 100vh;
+overflow: hidden;
+position: relative;
+}
+.img-wrapper{
+
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.8)
+}
+
+.img-wrapper img{
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.7;
+    animation: zoom  25s ;
+    
+}
+
+.baner{
+
+    position: absolute;
+    top:30% ;
+    left: 15%;
+    
+}
+
+.baner h1{
+    color: rgb(245, 241, 241);
+    font-size: 6.2rem;
+    font-family: 'Baloo Da 2';
+    font-weight: 300;
+    text-shadow: 0.2rem  0.4rem  2px rgba(0, 0, 0, 0.8);
+    animation: moveBanner  2.5s  0.5 forwards;;
+    
+    
+}
+.baner p{
+    color: white;
+    font-size: 3.2rem;
+    font-family: "Baloo Da 2";
+    text-shadow: 00.2rem  0.4rem 2px rgba(0, 0, 0, 0.8);
+    animation: moveBanner  2.5s 0.9 forwards;
+}
+
+.baner button{
+    font-family: "Baloo Da 2";
+    font-size: 2.2rem;
+    color: rgb(250, 225, 225);
+    background: #200122;  
+    background: -webkit-linear-gradient(to left, #6f0000, #200122);  
+    background: linear-gradient(to left, #6f0000, #200122); 
+    padding: 1rem 4rem;
+    border:none;
+    border-radius: 8px;
+    cursor: pointer;
+    animation: moveBanner  2.5s 0.7 forwards;
+
+
+}
+
+.baner button:hover{
+
+    color: black;
+    background-color: rgb(104, 13, 13);
+    text-shadow:00.2rem  0.2rem 5px rgba(0, 0, 0, 0.8);
+    opacity: 0.7;
+
+}
+
+@keyframes zoom {
+    0%{
+        transform: scale(1.2);
+
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+@keyframes moveBanner{
+
+    0%{
+        transform: translateY(10rem) rotateY(-30deg); opacity: 0;
+    }
+    100%{
+        transform: translateY(0rem) rotateY(0);opacity:1 ;
+    }
+
+}
+
+.sidebar {
+    width: 20rem;
+    height: 100vh;
+    background-color:rgb(255, 255, 255);
+    position: fixed;
+    top: 0;
+    right: 0;
+    right: -20rem;
+    transition:  1s;
+    
+}
+.show-menu .sidebar{
+    right: 0rem;
+
+}
+
+
+.menu {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%,50%);    
+}
+
+
+
+.menu-item{
+    text-emphasis: center;
+}
+
+.menu-link{
+    font-family: 'Baloo Da 2' ;
+    text-align: center;
+    font-size: 1.5rem;
+    color: black;
+    transition: color 1s; 
+}
+
+.menu-link:hover {
+
+    color: rgb(231, 3, 3);
+    
+}
+
+.social-media{
+  
+    position: absolute;
+    bottom: 1rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.social-media i{
+
+    color: rgb(133, 4, 4, );
+    height: 2,5 rem;
+    width: 2.5rem;
+    font-size: 1.5rem;
+    transition: color 1s;
+}
+
+
+.social-media i:hover{
+
+color: rgb(155, 8, 8);
+}
+
+
+
+
+.conhecimentos{
+
+    display: grid;
+    grid-template-columns: repeat(16,1fr);
+    grid-template-rows:repeat(6,6rem) ;
+    row-gap: .5rem;
+}
+
+.conhecimento:nth-child(1){
+    grid-column: 4/7;
+    grid-row: 1/3;
+}
+
+
+.conhecimento:nth-child(2){
+    grid-column: 3/6;
+    grid-row: 3/5;
+}
+
+
+.conhecimento:nth-child(3){
+    grid-column: 4/7;
+    grid-row: 5/-1;
+}
+
+
+.conhecimento:nth-child(4){
+    grid-column: 11/14;
+    grid-row: 1/3;
+}
+
+
+.conhecimento:nth-child(5){
+    grid-column: 12/15;
+    grid-row: 3/5;
+}
+.conhecimento:nth-child(6){
+    grid-column: 11/14;
+    grid-row: 5/-1;
+}
+
+.sessao-conhecimentos {
+    background-color: #ffffff;
+    height: 100%;
+  }
+  
+  .sessao-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+.sessao-header h1 {
+    font-family: var(--font-primary);
+    font-size: 3rem;
+    color: #080808;
+    border-bottom: solid 3px #ac0000;
+    margin-bottom: 1.5rem;
+
+}
+
+
+
+.conhecimento-header{
+    display: flex;
+    align-items: center;
+    
+}
+
+.conhecimento-header i{
+    padding: 0.5rem;
+    font-size: 2.6rem;
+    color: rgb(182, 0, 0);
+}
+
+
+.conhecimento-header h3{
+    font-family: 'Baloo Da 2';
+    font-size: 1.8rem;
+}
+
+.conhecimento-text{
+    font-family: 'Georgia, 'Times New Roman', Times, serif';
+    font-size: 0.8rem;
+}
+
+
+.conhecimentos-img-wrapper:nth-child(7){
+
+    grid-column: 7/11;
+    grid-row: 2/6;
+    width: 100%;   
+}
+.conhecimentos-img-wrapper img{
+    width: 100%;
+    object-fit: cover;
+    
+
+         
+}
+
+.projetos {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 2rem;
+  }
+  
+  .card {
+    width: 18rem;
+    height: 25rem;
+    position: relative;
+  }
+  
+  .card-img-wrapper {
+    width: 100%;
+    height: 100%;
+    background-color: #262626;
+    border-radius: 0.5rem;
+  }
+  
+  .card-img-wrapper img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border-radius: 0.5rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+  }
+  
+  .card:hover .card-img-wrapper img {
+    opacity: 0.5;
+  }
+  
+  .card-info {
+    position: absolute;
+    bottom: 0;
+    opacity: 0;
+    visibility: hidden;
+    padding: 2rem;
+    text-shadow: 0.3rem 0.2rem 0.3rem rgba(0, 0, 0, 0.6);
+    transition: all 0.3s;
+  }
+  
+  .card-info h2 {
+    font-family: var(--font-primary);
+    font-size: 2rem;
+    font-weight: 500;
+    color: #eee;
+  }
+  
+  .card-info h3 {
+    font-family: var(--font-action);
+    font-weight: bolder;
+    color: #ff4081;
+    margin-bottom: 1.5rem;
+  }
+  
+  .card-info p {
+    font-family: var(--font-secundary);
+    color: #eee;
+    font-weight: 400;
+    width: 80%;
+    margin-bottom: 2rem;
+  }
+  
+  .btn {
+    background: #a50000;
+    background: -webkit-linear-gradient(to right, #990000, #b10000);
+    background: linear-gradient(to left, #920000, #a80000);
+    font-family: var(--font-action);
+    color: #eee;
+    border-radius: 0.5rem;
+    border: none;
+    box-shadow: 0 0.1rem 0.8rem rgba(0, 0, 0, 0.4);
+  }
+  
+  .card-info button {
+    width: 8rem;
+    height: 2.5rem;
+  }
+  
+.card:hover .card-info {
+    bottom: 2rem;
+    opacity: 1;
+    visibility: visible;
+
+  }
+
+
+.Sobre{
+      display: flex;
+      justify-content: space-evenly;
+      margin-bottom: 2rem;
+  }
+.albun{
+
+    height: 20rem;
+    width: 16rem;
+    position: relative;
+    
+  }
+
+.rr {
+    opacity: 1;
+}
+
+.vv{
+
+    opacity: 0;
+}
+  .img-card {
+      height: 100%;
+      width: 100%;
+      background-color: rgb(56, 56, 56);
+      border-radius: 0.5rem;
+  }
+
+  .img-card img{
+   position: absolute;
+   object-fit: cover;
+   height: 100%;
+   width: 100%;
+   border-radius: 0.5rem;
+
+  }
+
+  .albun:hover .img-card{
+      opacity: 0.3;
+      background-color: black;
+      
+
+  }
+
+  .informações{
+      position: absolute;
+      bottom: 0;
+      opacity: 0;
+      margin-left: 0.6%;
+      margin-right: 0.3%;
+  }
+  .informações button{
+      margin-bottom: 1.7rem;
+      background: linear-gradient(to right ,rgb(104, 0, 0),rgb(160, 1, 1) );
+      color: #fff;
+      padding: 0.5rem;
+      border-radius: 0.4rem;
+      font-family: 'Baloo Da 2';
+      font-size: 0.8rem;
+  }
+  .informações h2{
+
+    color: rgb(189, 0, 0);
+    font-size: 1.6rem;
+    font-family: 'Baloo Da 2';
+    
+  }
+
+  .informações h3{
+
+    color: rgb(189, 0, 0);
+    font-size: 1.3rem;
+    font-family: 'Baloo Da 2';
+  }
+
+  .informações p{
+    
+    color: rgb(0, 0, 0);
+    font-size: 1rem;
+    font-family: 'Baloo Da 2';
+    
+  }
+
+  .informações:hover{
+
+     opacity: 1;
+    transition: 0.8s;
+  }
+  .alo{
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .imagem2{
+      height: 30%;
+      width:30%;
+      margin-right: 1.5rem;
+      border-radius: 0.4;
+  }
+  .texti{
+      color: black;
+      font-size: 1rem;
+      text-align: left;
+     
+  }
+
+  .texti main{
+      margin-left: 0.5%;
+      background-color: #fff;
+      border-radius: 0.8rem;
+  }
+  .contato{
+
+      position:relative;
+      width: 100%;
+      height: 100%;
+  }
+
+  
+  .zzz{
+
+    height: 78%;
+    width: 75%;
+    bottom: 0rem;
+    margin: 10%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    position: relative;
+  }
+
+  .contat{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    text-align: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Baloo Da 2';
+    font-size: 1rem;
+  }
+
+  .contat .Cansei-de-fazer{
+
+    padding: 1rem;
+    padding-top: 0rem;
+    font-family: 'Baloo Da 2';
+    padding-bottom: 0rem;
+    background-color: rgb(150, 2, 2);
+    margin: 1rem;
+    border-radius: 0.5rem;
+    color: rgb(255, 255, 255);
+    font-size: 1rem;
+
+
+
+  }
+  .img5{
+
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    bottom: 0;
+    background-color: rgb(19, 19, 19);
+    border-radius: 1rem;
+
+
+
+  }
+  .img5 img{
+      height: 100%;
+      width: 100%;
+      border-radius: 1rem;
+      opacity: 0.5;
+  }
